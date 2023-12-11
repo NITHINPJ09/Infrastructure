@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+
+  pre_build:
+    commands:
+      - sudo apt-get update
+      - sudo apt-get install -y unzip
+      - wget https://releases.hashicorp.com/terraform/1.6.0/terraform_1.6.0_linux_amd64.zip
+      - unzip terraform_1.6.0_linux_amd64.zip
+      - sudo mv terraform /usr/local/bin/
+      - terraform --version
+      - terraform init
+
+  build:
+    commands:
+      - terraform plan -var-file="${ENV}.tfvars" -out="${ENV}-tf-plan"
+
+artifacts:
+ files:
+   - $CODEBUILD_SRC_DIR/${ENV}-tf-plan
