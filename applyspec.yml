@@ -17,8 +17,5 @@ phases:
     commands:
       - cd $CODEBUILD_SRC_DIR
       - ls
-      # - cd $CODEBUILD_SRC_DIR_BuildArtifact
-      # - ls
-      # - terraform apply $CODEBUILD_SRC_DIR_BuildArtifact/$ENV-tf-plan
-      - terraform apply $CODEBUILD_SRC_DIR/$ENV-tf-plan
+      - terraform apply $CODEBUILD_SRC_DIR/$ENV.tfplan
 
