@@ -10,6 +10,7 @@ phases:
       - unzip terraform_1.6.0_linux_amd64.zip
       - sudo mv terraform /usr/local/bin/
       - terraform --version
+      - export TF_CLI_ARGS_init='-backend-config="npj-terraform-state" -backend-config="region=eu-west-3" -backend-config="key=networking/terraform.tfstate"'
       - terraform init
 
   build:
