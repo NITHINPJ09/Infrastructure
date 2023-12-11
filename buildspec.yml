@@ -19,4 +19,4 @@ phases:
 
 artifacts:
  files:
-   - $CODEBUILD_SRC_DIR/${ENV}-tf-plan
+   - ${ENV}-tf-plan
