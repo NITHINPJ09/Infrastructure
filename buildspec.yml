@@ -15,9 +15,8 @@ phases:
 
   build:
     commands:
-      - ls
-      # - cd ${CODEBUILD_SRC_DIR}
-      - terraform plan -var-file="${ENV}.tfvars" -out="${ENV}-tf-plan"
+      - cd ${CODEBUILD_SRC_DIR}
+      - terraform plan -var-file="${ENV}.tfvars" -out="${ENV}.tfplan"
       - ls
 
 artifacts:
