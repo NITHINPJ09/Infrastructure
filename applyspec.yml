@@ -17,6 +17,6 @@ phases:
     commands:
       - cd $CODEBUILD_SRC_DIR
       - ls
-      #- terraform apply "${ENV}.tfplan"
-      - terraform destroy -var-file dev.tfvars -auto-approve
+      - terraform apply "${ENV}.tfplan"
+      #- terraform destroy -var-file dev.tfvars -auto-approve
 
